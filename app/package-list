@@ -1,0 +1,21 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.htueko.thesilverscreen.ui.theme////PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/index.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//DarkColorPalette/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-dark-color-palette.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//LightColorPalette/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-light-color-palette.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//Purple200/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-purple200.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//Purple500/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-purple500.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//Purple700/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-purple700.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//Shapes/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-shapes.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//Teal200/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-teal200.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//TheSilverScreenTheme/#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-the-silver-screen-theme.html
+$dokka.location:com.htueko.thesilverscreen.ui.theme//Typography/#/PointingToDeclaration/app/com.htueko.thesilverscreen.ui.theme/-typography.html
+$dokka.location:com.htueko.thesilverscreen////PointingToDeclaration/app/com.htueko.thesilverscreen/index.html
+$dokka.location:com.htueko.thesilverscreen//DefaultPreview/#/PointingToDeclaration/app/com.htueko.thesilverscreen/-default-preview.html
+$dokka.location:com.htueko.thesilverscreen//Greeting/#kotlin.String/PointingToDeclaration/app/com.htueko.thesilverscreen/-greeting.html
+$dokka.location:com.htueko.thesilverscreen/MainActivity///PointingToDeclaration/app/com.htueko.thesilverscreen/-main-activity/index.html
+$dokka.location:com.htueko.thesilverscreen/MainActivity/MainActivity/#/PointingToDeclaration/app/com.htueko.thesilverscreen/-main-activity/-main-activity.html
+$dokka.location:com.htueko.thesilverscreen/MainActivity/onCreate/#android.os.Bundle?/PointingToDeclaration/app/com.htueko.thesilverscreen/-main-activity/on-create.html
+com.htueko.thesilverscreen
+com.htueko.thesilverscreen.ui.theme
+
