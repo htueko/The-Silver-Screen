@@ -1,0 +1,17 @@
+name: Greeting
+# This action will run when pull request or issues triggered
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+      - name: Greeting
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: 'Thank you for helping us make this project better 🙂'
+          pr-message: 'Thank you for submitting your first PR 🎉'
