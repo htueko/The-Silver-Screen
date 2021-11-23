@@ -23,8 +23,7 @@ import coil.annotation.ExperimentalCoilApi
 import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
 import com.htueko.thesilverscreen.domain.model.Movie
-import com.htueko.thesilverscreen.presentation.view.thesilverscreen.bottomappbar.Screen
-
+import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.Screen
 
 @ExperimentalCoilApi
 @Composable
