@@ -2,6 +2,7 @@ package com.htueko.thesilverscreen.data.remote
 
 import com.htueko.thesilverscreen.BuildConfig
 
+
 /**
  * constant for remote api
  */
