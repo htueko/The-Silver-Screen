@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">The Silver Screen</string>
+    <string name="text_nav_icon">Navigation Icon</string>
+    <string name="text_average_rating">Average Rating</string>
+    <string name="text_runtime">Runtime</string>
+    <string name="text_language">Spoken Language(s)</string>
+    <string name="text_company">Production Company(s)</string>
+    <string name="text_connectivity_icon">Connectivity Icon</string>
+    <string name="text_online">Back Online!</string>
+    <string name="text_offline">No Internet Connection!</string>
 </resources>
