@@ -1,0 +1,96 @@
+{
+  "adult": false,
+  "backdrop_path": "/zBkHCpLmHjW2uVURs5uZkaVmgKR.jpg",
+  "belongs_to_collection": null,
+  "budget": 0,
+  "genres": [
+    {
+      "id": 16,
+      "name": "Animation"
+    },
+    {
+      "id": 35,
+      "name": "Comedy"
+    },
+    {
+      "id": 10751,
+      "name": "Family"
+    }
+  ],
+  "homepage": "",
+  "id": 585245,
+  "imdb_id": "tt2397461",
+  "original_language": "en",
+  "original_title": "Clifford the Big Red Dog",
+  "overview": "As Emily struggles to fit in at home and at school, she discovers a small red puppy who is destined to become her best friend. When Clifford magically undergoes one heck of a growth spurt, becomes a gigantic dog and attracts the attention of a genetics company, Emily and her Uncle Casey have to fight the forces of greed as they go on the run across New York City. Along the way, Clifford affects the lives of everyone around him and teaches Emily and her uncle the true meaning of acceptance and unconditional love.",
+  "popularity": 3574.383,
+  "poster_path": "/30ULVKdjBcQTsj2aOSThXXZNSxF.jpg",
+  "production_companies": [
+    {
+      "id": 4,
+      "logo_path": "/fycMZt242LVjagMByZOLUGbCvv3.png",
+      "name": "Paramount",
+      "origin_country": "US"
+    },
+    {
+      "id": 8147,
+      "logo_path": "/q6HOAdSNgCbeOqwoMVRc6REgbXF.png",
+      "name": "Entertainment One",
+      "origin_country": "CA"
+    },
+    {
+      "id": 7311,
+      "logo_path": null,
+      "name": "Kerner Entertainment Company",
+      "origin_country": ""
+    },
+    {
+      "id": 30246,
+      "logo_path": null,
+      "name": "Scholastic Entertainment",
+      "origin_country": "US"
+    },
+    {
+      "id": 114732,
+      "logo_path": "/tNCbisMxO5mX2X2bOQxHHQZVYnT.png",
+      "name": "New Republic Pictures",
+      "origin_country": "US"
+    },
+    {
+      "id": 10221,
+      "logo_path": "/99VfWRgKasZoyK9UVB39gnYvFrZ.png",
+      "name": "Walden Media",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "CA",
+      "name": "Canada"
+    },
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2021-11-10",
+  "revenue": 22000000,
+  "runtime": 97,
+  "spoken_languages": [
+    {
+      "english_name": "English",
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Adventure has never been bigger.",
+  "title": "Clifford the Big Red Dog",
+  "video": false,
+  "vote_average": 7.8,
+  "vote_count": 151
+}
