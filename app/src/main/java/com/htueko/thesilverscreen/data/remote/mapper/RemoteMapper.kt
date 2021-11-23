@@ -1,6 +1,5 @@
 package com.htueko.thesilverscreen.data.remote.mapper
 
-
 import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto
 import com.htueko.thesilverscreen.data.remote.dto.MovieDto
 import com.htueko.thesilverscreen.domain.model.BelongsToCollection

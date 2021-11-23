@@ -15,12 +15,11 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.htueko.thesilverscreen.R
 import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.BottomAppBarScreen.NowPlaying
 import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.BottomAppBarScreen.Popular
 import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.BottomAppBarScreen.TopRated
 import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.BottomAppBarScreen.Upcoming
-import com.htueko.thesilverscreen.R
-
 
 @Composable
 fun BottomAppBar(navHostController: NavHostController) {
