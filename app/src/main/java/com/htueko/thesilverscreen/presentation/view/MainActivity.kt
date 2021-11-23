@@ -1,4 +1,4 @@
-package com.htueko.thesilverscreen
+package com.htueko.thesilverscreen.presentation.view
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
