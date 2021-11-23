@@ -1,4 +1,4 @@
-package com.htueko.thesilverscreen.ui.theme
+package com.htueko.thesilverscreen.presentation.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
