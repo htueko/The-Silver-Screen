@@ -1,7 +1,16 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+    id 'org.jetbrains.dokka'
+    id 'org.jetbrains.kotlin.plugin.serialization'
 }
+
+def apiKeyPropertiesFile = rootProject.file("apiKey.properties")
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
 
 android {
     compileSdk 31
@@ -12,7 +21,7 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
+        buildConfigField("String", "TMDB_API_KEY", apiKeyProperties['TMDB_API_KEY'])
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
@@ -38,7 +47,16 @@ android {
     }
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
-        kotlinCompilerVersion '1.5.21'
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    sourceSets {
+        androidTest {
+            assets.srcDirs = ["src/debug/assets"]
+        }
     }
     packagingOptions {
         resources {
@@ -47,19 +65,124 @@ android {
     }
 }
 
+tasks.dokkaHtml.configure {
+    dokkaSourceSets {
+        named("main") {
+            // don't link to android sdk
+            noAndroidSdkLink.set(false)
+            // hide the deprecated
+            skipDeprecated.set(true)
+            // show private properties
+            includeNonPublic.set(true)
+            // Suppress all inherited members that were not overridden in a given class.
+            suppressInheritedMembers.set(true)
+        }
+    }
+    outputDirectory.set(file("documentation/html"))
+}
+
+tasks.dokkaGfm.configure {
+    dokkaSourceSets {
+        named("main") {
+            // don't link to android sdk
+            noAndroidSdkLink.set(false)
+            // hide the deprecated
+            skipDeprecated.set(true)
+            // show private properties
+            includeNonPublic.set(true)
+            // Suppress all inherited members that were not overridden in a given class.
+            suppressInheritedMembers.set(true)
+        }
+    }
+    outputDirectory.set(file("documentation/gfm"))
+}
+
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "com.google.android.material:material:$material_version"
+
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.0-alpha06'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.0'
+    implementation "androidx.activity:activity-compose:$compose_activity_version"
+    implementation "androidx.paging:paging-compose:$compose_paging"
+
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
+
+    // Compose dependencies
+    implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$compose_viewmodel"
+    implementation "androidx.navigation:navigation-compose:$compose_navigation"
+    implementation "androidx.compose.material:material-icons-extended:$compose_version"
+    implementation "androidx.hilt:hilt-navigation-compose:$hilt_navigation_compose_version"
+
+    // accompanylist
+    implementation "com.google.accompanist:accompanist-flowlayout:$accompanist_version"
+
+    // Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutine_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version"
+
+    //Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodel_version"
+    kapt "androidx.hilt:hilt-compiler:$hilt_compiler"
+
+    // Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+
+    // Kotlin Extensions and Coroutines support for Room
+    implementation "androidx.room:room-ktx:$room_version"
+
+    // Network & Serialization
+    implementation "io.ktor:ktor-client-core:$ktor_version"
+    implementation "io.ktor:ktor-client-android:$ktor_version"
+    implementation "io.ktor:ktor-client-serialization:$ktor_version"
+    implementation "io.ktor:ktor-client-logging:$ktor_version"
+    implementation "io.ktor:ktor-client-mock:$ktor_version"
+    implementation "ch.qos.logback:logback-classic:1.2.6"
+    implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1"
+
+    // coil for compose
+    implementation "io.coil-kt:coil-compose:$coil_version"
+
+    // Logging
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+    implementation "com.orhanobut:logger:$orhanobutVersion"
+
+    // Local unit tests
+    testImplementation "androidx.test:core:1.4.0"
+    testImplementation "junit:junit:4.13.2"
+    testImplementation "androidx.arch.core:core-testing:2.1.0"
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2-native-mt'
+    testImplementation "com.google.truth:truth:1.1.3"
+    testImplementation 'io.mockk:mockk:1.12.0'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest:1.1.0-beta03'
+    testImplementation "io.ktor:ktor-client-mock:$ktor_version"
+    testImplementation "androidx.test.ext:junit-ktx:1.1.3"
+    testImplementation "org.robolectric:robolectric:4.6.1"
+    testImplementation "org.mockito.kotlin:mockito-kotlin:4.0.0"
+    testImplementation("com.squareup.okhttp3:mockwebserver:5.0.0-alpha.2")
+    testImplementation "org.hamcrest:hamcrest:2.2"
+
+    // Instrumentation tests
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.40'
+    kaptAndroidTest 'com.google.dagger:hilt-android-compiler:2.40'
+    androidTestImplementation "junit:junit:4.13.2"
+    androidTestImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.2-native-mt'
+    androidTestImplementation "androidx.arch.core:core-testing:2.1.0"
+    androidTestImplementation "com.google.truth:truth:1.1.3"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test:core-ktx:1.4.0'
+    androidTestImplementation 'io.mockk:mockk-android:1.12.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+
 }
