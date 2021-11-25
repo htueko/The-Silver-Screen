@@ -15,8 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.SignalWifiConnectedNoInternet4
-import androidx.compose.material.icons.rounded.SignalWifiStatusbar4Bar
+import androidx.compose.material.icons.rounded.Error
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -30,17 +29,12 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.htueko.thesilverscreen.R
-import com.htueko.thesilverscreen.util.ConnectionState
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import com.htueko.thesilverscreen.R.string
 import kotlinx.coroutines.delay
 
 @ExperimentalAnimationApi
-@ExperimentalCoroutinesApi
 @Composable
-fun ConnectivityStatus() {
-    val connection by connectivityState()
-    val isConnected = connection === ConnectionState.Available
+fun ErrorStatus(hasError: Boolean, errorMessage: String) {
 
     var visibility by remember { mutableStateOf(false) }
 
@@ -49,11 +43,11 @@ fun ConnectivityStatus() {
         enter = expandVertically(),
         exit = shrinkVertically()
     ) {
-        ConnectivityStatusBox(isConnected = isConnected)
+        ErrorStatusBox(hasError, errorMessage)
     }
 
-    LaunchedEffect(isConnected) {
-        visibility = if (!isConnected) {
+    LaunchedEffect(hasError) {
+        visibility = if (!hasError) {
             true
         } else {
             delay(2000)
@@ -63,20 +57,19 @@ fun ConnectivityStatus() {
 }
 
 @Composable
-fun ConnectivityStatusBox(isConnected: Boolean) {
+fun ErrorStatusBox(hasError: Boolean, errorMessage: String) {
 
-    val backgroundColor by animateColorAsState(if (isConnected) Color.Green else Color.Red)
+    val backgroundColor by animateColorAsState(if (hasError) Color.Green else Color.Red)
 
-    val message = if (isConnected) {
-        stringResource(id = R.string.text_online)
+    val message: String? = if (hasError) {
+        errorMessage
     } else {
-        stringResource(id = R.string.text_offline)
+        null
     }
-
-    val iconResource: ImageVector = if (isConnected) {
-        Icons.Rounded.SignalWifiStatusbar4Bar
+    val iconResource: ImageVector? = if (hasError) {
+        Icons.Rounded.Error
     } else {
-        Icons.Rounded.SignalWifiConnectedNoInternet4
+        null
     }
 
     Box(
@@ -87,13 +80,22 @@ fun ConnectivityStatusBox(isConnected: Boolean) {
         contentAlignment = Alignment.Center
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Icon(
-                imageVector = iconResource,
-                contentDescription = stringResource(id = R.string.text_connectivity_icon),
-                tint = Color.White
-            )
+
+            if (iconResource != null) {
+                Icon(
+                    imageVector = iconResource,
+                    contentDescription = stringResource(id = string.text_connectivity_icon),
+                    tint = Color.White
+                )
+            }
+
             Spacer(modifier = Modifier.size(8.dp))
-            Text(message, color = Color.White, fontSize = 15.sp)
+
+            if (message != null) {
+                Text(message, color = Color.White, fontSize = 15.sp)
+            }
+
         }
     }
+
 }

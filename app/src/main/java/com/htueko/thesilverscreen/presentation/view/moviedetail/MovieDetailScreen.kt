@@ -32,6 +32,7 @@ import com.htueko.thesilverscreen.presentation.base.mvi.LoadingState
 import com.htueko.thesilverscreen.presentation.view.component.BodyTextComponent
 import com.htueko.thesilverscreen.presentation.view.component.ConnectivityStatus
 import com.htueko.thesilverscreen.presentation.view.component.DividerTiny
+import com.htueko.thesilverscreen.presentation.view.component.ErrorStatus
 import com.htueko.thesilverscreen.presentation.view.component.HorizontalSpacerTiny
 import com.htueko.thesilverscreen.presentation.view.component.TitleTextComponent
 import com.htueko.thesilverscreen.presentation.view.moviedetail.state.DetailUiEvent
@@ -64,6 +65,7 @@ fun MovieDetailScreen(
                 containerHeight = 200.dp
             )
             ShowMovieInfo(movie = state.movieDetail)
+            ErrorStatus(hasError = state.hasError, errorMessage = state.errorMessage ?: "")
         }
     }
 }

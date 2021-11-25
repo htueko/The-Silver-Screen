@@ -18,6 +18,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
 import com.htueko.thesilverscreen.presentation.view.component.ConnectivityStatus
+import com.htueko.thesilverscreen.presentation.view.component.ErrorStatus
 import com.htueko.thesilverscreen.presentation.view.component.MovieCardComponent
 import com.htueko.thesilverscreen.presentation.view.upcoming.viewmodel.UpComingViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -51,5 +52,6 @@ fun UpComingScreen(
                 }
             }
         }
+        ErrorStatus(hasError = state.hasError, errorMessage = state.errorMessage)
     }
 }
