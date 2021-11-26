@@ -20,11 +20,11 @@ buildscript {
         compose_navigation = '2.4.0-beta02'
         compose_viewmodel = '2.4.0'
         compose_paging = '1.0.0-alpha14'
-        accompanist_version = '0.21.2-beta'
+        accompanist_version = '0.21.3-beta'
 
         coroutine_version = '1.5.2'
 
-        hilt_version = '2.40'
+        hilt_version = '2.40.2'
         hilt_compiler = '1.0.0'
         hilt_viewmodel_version = '1.0.0-alpha03'
         hilt_navigation_compose_version = '1.0.0-beta01'
@@ -36,9 +36,6 @@ buildscript {
         ktor_version = '1.6.5'
         kotlinx_serialization_version = '1.5.31'
 
-        timberVersion = '4.7.1'
-        orhanobutVersion = '2.2.0'
-
     }
     repositories {
         google()
@@ -47,7 +44,7 @@ buildscript {
     }
     dependencies {
         classpath "com.android.tools.build:gradle:$gradle_version"
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.0"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         classpath "org.jetbrains.kotlin:kotlin-serialization:$kotlinx_serialization_version"
         classpath "com.diffplug.spotless:spotless-plugin-gradle:$spotless_version"

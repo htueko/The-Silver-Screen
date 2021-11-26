@@ -94,8 +94,6 @@ fun ErrorStatusBox(hasError: Boolean, errorMessage: String) {
             if (message != null) {
                 Text(message, color = Color.White, fontSize = 15.sp)
             }
-
         }
     }
-
 }
