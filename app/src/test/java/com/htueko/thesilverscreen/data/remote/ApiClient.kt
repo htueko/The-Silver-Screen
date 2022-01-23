@@ -1,7 +1,5 @@
 package com.htueko.thesilverscreen.data.remote
 
-import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto
-import com.htueko.thesilverscreen.data.remote.dto.MovieDto
 import io.ktor.client.HttpClient
 import io.ktor.client.request.HttpResponseData
 import io.ktor.client.request.get

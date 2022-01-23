@@ -4,8 +4,6 @@ import com.htueko.thesilverscreen.data.remote.OptionalConstant
 import com.htueko.thesilverscreen.data.remote.RelativeConstant
 import com.htueko.thesilverscreen.data.remote.RemoteConstant
 import com.htueko.thesilverscreen.data.remote.RequireConstant
-import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto
-import com.htueko.thesilverscreen.data.remote.dto.MovieDto
 import com.htueko.thesilverscreen.domain.model.status.ResultOf
 import io.ktor.client.HttpClient
 import io.ktor.client.call.receive

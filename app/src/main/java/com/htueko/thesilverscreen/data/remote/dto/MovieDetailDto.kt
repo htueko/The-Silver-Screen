@@ -1,7 +1,7 @@
 package com.htueko.thesilverscreen.data.remote.dto
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+
+import com.squareup.moshi.Json
 
 /**
  * data transfer object for detail movie response
@@ -11,56 +11,55 @@ import kotlinx.serialization.Serializable
  * @see [ProductionCountry]
  * @see [SpokenLanguage]
  */
-@Serializable
 data class MovieDetailDto(
-    @SerialName("adult")
-    val adult: Boolean? = null,
-    @SerialName("backdrop_path")
-    val backdropPath: String? = null,
-    @SerialName("belongs_to_collection")
-    val belongsToCollection: BelongsToCollection? = null,
-    @SerialName("budget")
-    val budget: Int? = null,
-    @SerialName("genres")
-    val genres: List<Genre>? = null,
-    @SerialName("homepage")
-    val homepage: String? = null,
-    @SerialName("id")
-    val id: Int? = null,
-    @SerialName("imdb_id")
-    val imdbId: String? = null,
-    @SerialName("original_language")
-    val originalLanguage: String? = null,
-    @SerialName("original_title")
-    val originalTitle: String? = null,
-    @SerialName("overview")
-    val overview: String? = null,
-    @SerialName("popularity")
-    val popularity: Double? = null,
-    @SerialName("poster_path")
-    val posterPath: String? = null,
-    @SerialName("production_companies")
-    val productionCompanies: List<ProductionCompany>? = null,
-    @SerialName("production_countries")
-    val productionCountries: List<ProductionCountry>? = null,
-    @SerialName("release_date")
-    val releaseDate: String? = null,
-    @SerialName("revenue")
-    val revenue: Int? = null,
-    @SerialName("runtime")
-    val runtime: Int? = null,
-    @SerialName("spoken_languages")
-    val spokenLanguages: List<SpokenLanguage>? = null,
-    @SerialName("status")
-    val status: String? = null,
-    @SerialName("tagline")
-    val tagline: String? = null,
-    @SerialName("title")
-    val title: String? = null,
-    @SerialName("video")
-    val video: Boolean? = null,
-    @SerialName("vote_average")
-    val voteAverage: Double? = null,
-    @SerialName("vote_count")
-    val voteCount: Int? = null
+    @Json(name = "adult")
+    val adult: Boolean = false,
+    @Json(name = "backdrop_path")
+    val backdropPath: String = "",
+    @Json(name = "belongs_to_collection")
+    val belongsToCollection: BelongsToCollection? = BelongsToCollection(),
+    @Json(name = "budget")
+    val budget: Int = 0,
+    @Json(name = "genres")
+    val genres: List<Genre> = listOf(),
+    @Json(name = "homepage")
+    val homepage: String = "",
+    @Json(name = "id")
+    val id: Int = 0,
+    @Json(name = "imdb_id")
+    val imdbId: String = "",
+    @Json(name = "original_language")
+    val originalLanguage: String = "",
+    @Json(name = "original_title")
+    val originalTitle: String = "",
+    @Json(name = "overview")
+    val overview: String = "",
+    @Json(name = "popularity")
+    val popularity: Double = 0.0,
+    @Json(name = "poster_path")
+    val posterPath: String = "",
+    @Json(name = "production_companies")
+    val productionCompanies: List<ProductionCompany> = listOf(),
+    @Json(name = "production_countries")
+    val productionCountries: List<ProductionCountry> = listOf(),
+    @Json(name = "release_date")
+    val releaseDate: String = "",
+    @Json(name = "revenue")
+    val revenue: Int = 0,
+    @Json(name = "runtime")
+    val runtime: Int = 0,
+    @Json(name = "spoken_languages")
+    val spokenLanguages: List<SpokenLanguage> = listOf(),
+    @Json(name = "status")
+    val status: String = "",
+    @Json(name = "tagline")
+    val tagline: String = "",
+    @Json(name = "title")
+    val title: String = "",
+    @Json(name = "video")
+    val video: Boolean = false,
+    @Json(name = "vote_average")
+    val voteAverage: Double = 0.0,
+    @Json(name = "vote_count")
+    val voteCount: Int = 0
 )

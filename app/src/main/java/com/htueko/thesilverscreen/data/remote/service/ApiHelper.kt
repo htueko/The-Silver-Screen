@@ -1,7 +1,5 @@
 package com.htueko.thesilverscreen.data.remote.service
 
-import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto
-import com.htueko.thesilverscreen.data.remote.dto.MovieDto
 import com.htueko.thesilverscreen.domain.model.status.ResultOf
 
 /**

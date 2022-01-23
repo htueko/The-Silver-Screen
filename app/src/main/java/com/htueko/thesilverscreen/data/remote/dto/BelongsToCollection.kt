@@ -1,20 +1,19 @@
 package com.htueko.thesilverscreen.data.remote.dto
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+
+import com.squareup.moshi.Json
 
 /**
  * data transfer object for movie detail
  * @see [MovieDetailDto]
  */
-@Serializable
 data class BelongsToCollection(
-    @SerialName("backdrop_path")
-    val backdropPath: String? = null,
-    @SerialName("id")
-    val id: Int? = null,
-    @SerialName("name")
-    val name: String? = null,
-    @SerialName("poster_path")
-    val posterPath: String? = null
+    @Json(name = "backdrop_path")
+    val backdropPath: String = "",
+    @Json(name = "id")
+    val id: Int = 0,
+    @Json(name = "name")
+    val name: String = "",
+    @Json(name = "poster_path")
+    val posterPath: String = ""
 )

@@ -1,20 +1,22 @@
 package com.htueko.thesilverscreen.data.remote.dto
 
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
+
+import com.squareup.moshi.Json
 
 /**
  *  data transfer object for list of movie response
  *  @see [Movie]
+ *  @see [Dates]
  */
-@Serializable
 data class MovieDto(
-    @SerialName("page")
-    val page: Int? = null,
-    @SerialName("results")
-    val results: List<Movie>? = null,
-    @SerialName("total_pages")
-    val totalPages: Int? = null,
-    @SerialName("total_results")
-    val totalResults: Int? = null
+    @Json(name = "dates")
+    val dates: Dates = Dates(),
+    @Json(name = "page")
+    val page: Int = 0,
+    @Json(name = "results")
+    val movies: List<Movie> = listOf(),
+    @Json(name = "total_pages")
+    val totalPages: Int = 0,
+    @Json(name = "total_results")
+    val totalResults: Int = 0
 )
