@@ -1,5 +1,7 @@
 package com.htueko.thesilverscreen.data.remote.mapper
 
+import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto
+import com.htueko.thesilverscreen.data.remote.dto.MovieDto
 import com.htueko.thesilverscreen.domain.model.BelongsToCollection
 import com.htueko.thesilverscreen.domain.model.Genre
 import com.htueko.thesilverscreen.domain.model.Movie
@@ -9,6 +11,12 @@ import com.htueko.thesilverscreen.domain.model.ProductionCountry
 import com.htueko.thesilverscreen.domain.model.SpokenLanguage
 import com.htueko.thesilverscreen.domain.model.status.ResultOf
 import javax.inject.Singleton
+import com.htueko.thesilverscreen.data.remote.dto.BelongsToCollection as BelongToCollectionResponse
+import com.htueko.thesilverscreen.data.remote.dto.Genre as GenreResponse
+import com.htueko.thesilverscreen.data.remote.dto.Movie as MovieResponse
+import com.htueko.thesilverscreen.data.remote.dto.ProductionCompany as ProductionCompanyResponse
+import com.htueko.thesilverscreen.data.remote.dto.ProductionCountry as ProductionCountryResponse
+import com.htueko.thesilverscreen.data.remote.dto.SpokenLanguage as SpokenLanguageResponse
 
 /**
  * to convert from data transfer object of data layer to model object of domain layer
@@ -26,7 +34,7 @@ class RemoteMapper {
             is ResultOf.ApiError -> ResultOf.ApiError(response.message)
             is ResultOf.NetworkError -> ResultOf.NetworkError(response.throwable)
             is ResultOf.Success -> ResultOf.Success(
-                mapFromResponseToModelList(response.data.results ?: emptyList())
+                mapFromResponseToModelList(response.data.movies ?: emptyList())
             )
         }
     }
