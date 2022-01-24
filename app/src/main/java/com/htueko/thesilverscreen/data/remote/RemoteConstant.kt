@@ -21,16 +21,16 @@ object RelativeConstant {
      * Start of Get
      */
     // upcoming movies
-    const val upcoming = "movie/upcoming"
+    const val upcoming = "movie/upcoming/"
 
     // top rated movies
-    const val topRated = "movie/top_rated"
+    const val topRated = "movie/top_rated/"
 
     // popular movies
-    const val popular = "movie/popular"
+    const val popular = "movie/popular/"
 
     // now playing movies
-    const val nowPlaying = "movie/now_playing"
+    const val nowPlaying = "movie/now_playing/"
 
     // videos
     const val videos = "movie/{movie_id}/videos"

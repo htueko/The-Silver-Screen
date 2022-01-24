@@ -43,6 +43,8 @@ buildscript {
         ktor_version = '1.6.5'
         kotlinx_serialization_version = '1.5.31'
 
+        timber_version = '5.0.1'
+
     }
     repositories {
         google()
