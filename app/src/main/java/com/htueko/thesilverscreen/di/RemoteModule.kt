@@ -1,14 +1,20 @@
 package com.htueko.thesilverscreen.di
 
+import com.htueko.thesilverscreen.data.remote.RemoteConstant
+import com.htueko.thesilverscreen.data.remote.interceptor.AuthenticationInterceptor
+import com.htueko.thesilverscreen.data.remote.interceptor.NetworkStatusInterceptor
 import com.htueko.thesilverscreen.data.remote.service.ApiHelper
+import com.htueko.thesilverscreen.data.remote.service.RemoteApiImpl
 import com.htueko.thesilverscreen.data.remote.service.TmdbApiService
-import com.htueko.thesilverscreen.data.remote.service.httpClient
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import io.ktor.client.HttpClient
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Retrofit
+import retrofit2.converter.moshi.MoshiConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -22,26 +28,48 @@ abstract class RemoteModule {
     abstract fun bindApiService(service: TmdbApiService): ApiHelper
 
     companion object {
-        /**
-         * to provide the ktor android http client
-         * @see [httpClient]
-         */
-        @Provides
-        @Singleton
-        fun provideHttpClient(): HttpClient {
-            return httpClient
-        }
 
         /**
-         * to provide Api service implementation class with ktor android client
-         * @param httpClient - ktor android http client
-         * @see [httpClient]
-         * @see [TmdbApiService]
+         * to get the base url of the remote service
+         * @see [RemoteConstant.tmdbBaseUrl]
          */
         @Provides
-        @Singleton
-        fun provideApiService(httpClient: HttpClient): TmdbApiService {
-            return TmdbApiService(httpClient)
+        fun provideBaseUrl() = RemoteConstant.tmdbBaseUrl
+
+        /**
+         * to provide okhttp client with interceptors
+         * @param [httpLoggingInterceptor] log interceptor
+         * @param [networkStatusInterceptor] to provide network connection status
+         * @param [authenticationInterceptor] to provide api key for every call via header
+         */
+        @Provides
+        fun provideOkHttpClient(
+            httpLoggingInterceptor: HttpLoggingInterceptor,
+            networkStatusInterceptor: NetworkStatusInterceptor,
+            authenticationInterceptor: AuthenticationInterceptor
+        ): OkHttpClient {
+            return OkHttpClient.Builder()
+                .addInterceptor(networkStatusInterceptor)
+                .addInterceptor(authenticationInterceptor)
+                .addInterceptor(httpLoggingInterceptor)
+                .build()
         }
+
+        @Singleton
+        @Provides
+        fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
+            .addConverterFactory(MoshiConverterFactory.create())
+            .baseUrl(provideBaseUrl())
+            .client(okHttpClient)
+            .build()
+
+        @Provides
+        @Singleton
+        fun provideApiHelper(apiHelper: RemoteApiImpl): ApiHelper = apiHelper
+
+        @Provides
+        @Singleton
+        fun provideApiService(retrofit: Retrofit) = retrofit.create(TmdbApiService::class.java)
+
     }
 }
