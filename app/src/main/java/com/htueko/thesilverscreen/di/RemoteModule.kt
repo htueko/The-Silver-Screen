@@ -69,7 +69,8 @@ abstract class RemoteModule {
 
         @Provides
         @Singleton
-        fun provideApiService(retrofit: Retrofit) = retrofit.create(TmdbApiService::class.java)
+        fun provideApiService(retrofit: Retrofit): TmdbApiService =
+            retrofit.create(TmdbApiService::class.java)
 
     }
 }
