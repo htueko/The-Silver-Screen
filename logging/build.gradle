@@ -2,6 +2,7 @@ plugins {
     id 'com.android.library'
     id 'kotlin-android'
 }
+apply plugin: 'kotlin-android'
 
 android {
     compileSdk 31
@@ -30,5 +31,7 @@ dependencies {
     // Logging
     implementation "com.jakewharton.timber:timber:$timberVersion"
     implementation "com.orhanobut:logger:$orhanobutVersion"
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 }
