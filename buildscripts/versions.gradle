@@ -19,8 +19,12 @@ ext {
 
             // https://developer.android.com/jetpack/androidx/releases/lifecycle
             lifecycle            : "2.4.1",
+            // https://developer.android.com/jetpack/androidx/releases/lifecycle
+            viewModel            : "2.4.1",
             // https://developer.android.com/jetpack/androidx/releases/room
             room                 : "2.4.2",
+            // https://developer.android.com/jetpack/androidx/releases/paging
+            paging               : "1.0.0-alpha14",
 
             // https://developer.android.com/jetpack/androidx/releases/compose
             compose              : "1.1.1",
@@ -40,6 +44,8 @@ ext {
 
             // https://github.com/google/dagger/releases
             hilt                 : "2.41",
+            // https://mvnrepository.com/artifact/androidx.hilt/hilt-compiler?repo=google
+            hiltCompiler : "1.0.0",
 
             // https://github.com/square/retrofit/tags
             retrofit             : "2.9.0",
