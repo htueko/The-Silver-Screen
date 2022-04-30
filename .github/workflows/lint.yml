@@ -24,5 +24,8 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Run spotless code fix
-        run: ./gradlew :spotlessApply
+      - name: Build Project
+        run: ./gradlew assemble
+
+      - name: Code Analysis Check
+        run: ./gradlew ktlintCheck detekt
