@@ -45,7 +45,7 @@ ext {
             // https://github.com/google/dagger/releases
             hilt                 : "2.41",
             // https://mvnrepository.com/artifact/androidx.hilt/hilt-compiler?repo=google
-            hiltCompiler : "1.0.0",
+            hiltCompiler         : "1.0.0",
 
             // https://github.com/square/retrofit/tags
             retrofit             : "2.9.0",
@@ -66,6 +66,7 @@ ext {
             koverVersion         : "0.4.1",
             // https://github.com/JakeWharton/timber/releases
             timber               : "5.0.1",
+            orhanobut            : "2.2.0",
 
             // https://github.com/junit-team/junit4/releases
             junit                : "4.13.2",

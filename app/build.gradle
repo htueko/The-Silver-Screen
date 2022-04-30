@@ -88,9 +88,6 @@ tasks.dokkaHtml.configure {
 
 dependencies {
 
-    // Modules
-    implementation project(":logging")
-
     implementation "androidx.core:core-ktx:$rootProject.ext.versions.ktxCore"
     implementation "androidx.appcompat:appcompat:$rootProject.ext.versions.appCompat"
 
@@ -157,6 +154,7 @@ dependencies {
 
     // Logging
     implementation "com.jakewharton.timber:timber:$rootProject.ext.versions.timber"
+    implementation "com.orhanobut:logger:$rootProject.ext.versions.orhanobut"
 
     // Local unit tests
     testImplementation "junit:junit:$rootProject.ext.versions.junit"
