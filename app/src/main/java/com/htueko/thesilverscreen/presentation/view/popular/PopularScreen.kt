@@ -28,6 +28,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @Composable
+@Suppress("FunctionNaming")
 fun PopularScreen(
     navController: NavController,
     viewmodel: PopularViewModel = hiltViewModel()

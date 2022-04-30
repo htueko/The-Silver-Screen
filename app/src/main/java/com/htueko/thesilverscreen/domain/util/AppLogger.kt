@@ -6,6 +6,7 @@ import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import timber.log.Timber
 
+@Suppress("MagicNumber")
 object AppLogger {
 
     fun init() {

@@ -10,6 +10,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 
 @Composable
+@Suppress("FunctionNaming")
 fun BodyTextComponent(
     text: String
 ) {

@@ -1,6 +1,5 @@
 package com.htueko.thesilverscreen.data.remote.dto
 
-
 import com.squareup.moshi.Json
 
 /**

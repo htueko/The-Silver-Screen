@@ -1,3 +1,4 @@
+@file:Suppress("MatchingDeclarationName")
 package com.htueko.thesilverscreen.util
 
 import android.content.Context

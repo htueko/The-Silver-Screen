@@ -42,6 +42,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalAnimationApi
 @ExperimentalCoroutinesApi
 @Composable
+@Suppress("FunctionNaming", "MagicNumber")
 fun MovieDetailScreen(
     id: Int,
     viewmodel: MovieDetailViewModel = hiltViewModel()
@@ -71,6 +72,7 @@ fun MovieDetailScreen(
 }
 
 @Composable
+@Suppress("FunctionNaming", "MagicNumber")
 fun Loader(loadingState: LoadingState) {
     if (loadingState == LoadingState.LOADING) {
         CircularProgressIndicator()
@@ -78,6 +80,7 @@ fun Loader(loadingState: LoadingState) {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun ShowError(hasError: Boolean, errorMessage: String? = null) {
     if (hasError) {
         Text(text = errorMessage!!)
@@ -85,6 +88,7 @@ fun ShowError(hasError: Boolean, errorMessage: String? = null) {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun ShowImage(movie: MovieDetail?, containerHeight: Dp) {
     Card(
         modifier = Modifier
@@ -104,6 +108,7 @@ fun ShowImage(movie: MovieDetail?, containerHeight: Dp) {
 }
 
 @Composable
+@Suppress("FunctionNaming", "MagicNumber")
 fun ShowMovieInfo(movie: MovieDetail?) {
     HorizontalSpacerTiny()
     movie?.title?.let {
@@ -145,6 +150,7 @@ fun ShowMovieInfo(movie: MovieDetail?) {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun GenreGroup(movie: MovieDetail?) {
     FlowRow(
         modifier = Modifier.fillMaxWidth(),
@@ -158,6 +164,7 @@ fun GenreGroup(movie: MovieDetail?) {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun LanguageGroup(movie: MovieDetail?) {
     FlowRow(
         modifier = Modifier.fillMaxWidth(),
@@ -171,6 +178,7 @@ fun LanguageGroup(movie: MovieDetail?) {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun CompanyGroup(movie: MovieDetail?) {
     FlowRow(
         modifier = Modifier.fillMaxWidth(),
@@ -184,6 +192,7 @@ fun CompanyGroup(movie: MovieDetail?) {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun CustomChip(text: String) {
     Surface(
         modifier = Modifier.padding(4.dp),

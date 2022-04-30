@@ -15,6 +15,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @Composable
+@Suppress("FunctionNaming")
 fun HomeScreen() {
     val navController = rememberNavController()
     Scaffold(

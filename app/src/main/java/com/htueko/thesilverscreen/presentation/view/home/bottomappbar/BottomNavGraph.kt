@@ -21,6 +21,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @Composable
+@Suppress("FunctionNaming")
 fun BottomNavGraph(navHostController: NavHostController) {
     NavHost(
         navController = navHostController,

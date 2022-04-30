@@ -30,10 +30,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.htueko.thesilverscreen.R.string
-import kotlinx.coroutines.delay
 
 @ExperimentalAnimationApi
 @Composable
+@Suppress("FunctionNaming")
 fun ErrorStatus(hasError: Boolean, errorMessage: String) {
 
     var visibility by remember { mutableStateOf(false) }
@@ -47,16 +47,12 @@ fun ErrorStatus(hasError: Boolean, errorMessage: String) {
     }
 
     LaunchedEffect(hasError) {
-        visibility = if (!hasError) {
-            true
-        } else {
-            delay(2000)
-            false
-        }
+        visibility = !hasError
     }
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun ErrorStatusBox(hasError: Boolean, errorMessage: String) {
 
     val backgroundColor by animateColorAsState(if (hasError) Color.Green else Color.Red)

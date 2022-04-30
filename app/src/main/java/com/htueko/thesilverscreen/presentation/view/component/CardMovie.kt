@@ -27,6 +27,7 @@ import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.Screen
 
 @ExperimentalCoilApi
 @Composable
+@Suppress("FunctionNaming")
 fun MovieCardComponent(data: Movie, navController: NavController) {
 
     Card(

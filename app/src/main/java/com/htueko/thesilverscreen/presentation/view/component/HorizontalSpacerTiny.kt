@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
+@Suppress("FunctionNaming")
 fun HorizontalSpacerTiny() {
     Spacer(modifier = Modifier.height(4.dp))
 }

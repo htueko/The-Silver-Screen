@@ -1,3 +1,4 @@
+@file:Suppress("UnusedPrivateMember")
 package com.htueko.thesilverscreen.data.remote
 
 import io.ktor.client.HttpClient

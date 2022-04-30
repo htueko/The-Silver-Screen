@@ -7,6 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
+@Suppress("FunctionNaming")
 fun DividerTiny() {
     HorizontalSpacerTiny()
     Divider(modifier = Modifier.padding(bottom = 4.dp, top = 4.dp))

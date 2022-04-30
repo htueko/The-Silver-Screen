@@ -28,6 +28,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoilApi
 @ExperimentalFoundationApi
 @Composable
+@Suppress("FunctionNaming")
 fun NowPlayingScreen(
     navController: NavController,
     viewmodel: NowPlayingViewModel = hiltViewModel()

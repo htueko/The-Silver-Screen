@@ -1,3 +1,4 @@
+@file:Suppress("MatchingDeclarationName")
 package com.htueko.thesilverscreen.data.remote
 
 import io.ktor.http.HttpStatusCode

@@ -18,6 +18,7 @@ import io.ktor.http.HttpStatusCode
 import io.ktor.http.headersOf
 import kotlinx.serialization.json.Json
 
+@Suppress("ThrowsCount")
 object ApiClientEngine {
 
     fun getMockEngine(content: String, httpStatusCode: HttpStatusCode): MockEngine {

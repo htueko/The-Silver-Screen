@@ -3,8 +3,6 @@ package com.htueko.thesilverscreen.data.remote.service
 import com.htueko.thesilverscreen.data.remote.RelativeConstant
 import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto
 import com.htueko.thesilverscreen.data.remote.dto.MovieDto
-import com.htueko.thesilverscreen.domain.model.status.ResultOf
-import io.ktor.client.HttpClient
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -39,5 +37,4 @@ interface TmdbApiService {
     suspend fun getMovieDetailById(
         @Query("movieId") movieId: String
     ): Response<MovieDetailDto>
-
 }

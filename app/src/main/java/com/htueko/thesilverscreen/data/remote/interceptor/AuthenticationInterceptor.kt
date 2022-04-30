@@ -5,7 +5,6 @@ import com.htueko.thesilverscreen.data.remote.RequireConstant
 import okhttp3.Interceptor
 import okhttp3.Response
 
-
 /**
  * Interceptor used to intercept the actual request and
  * to supply Tmdp API Key in REST API calls via a custom header.
@@ -18,5 +17,4 @@ class AuthenticationInterceptor : Interceptor {
             .build()
         return chain.proceed(newRequest)
     }
-
 }

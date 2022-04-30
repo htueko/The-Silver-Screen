@@ -38,6 +38,7 @@ import kotlinx.coroutines.delay
 @ExperimentalAnimationApi
 @ExperimentalCoroutinesApi
 @Composable
+@Suppress("FunctionNaming", "MagicNumber")
 fun ConnectivityStatus() {
     val connection by connectivityState()
     val isConnected = connection === ConnectionState.Available
@@ -63,6 +64,7 @@ fun ConnectivityStatus() {
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun ConnectivityStatusBox(isConnected: Boolean) {
 
     val backgroundColor by animateColorAsState(if (isConnected) Color.Green else Color.Red)

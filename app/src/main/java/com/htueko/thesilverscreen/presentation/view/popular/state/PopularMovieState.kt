@@ -1,3 +1,4 @@
+@file:Suppress("MatchingDeclarationName")
 package com.htueko.thesilverscreen.presentation.view.popular.state
 
 import com.htueko.thesilverscreen.domain.model.Movie

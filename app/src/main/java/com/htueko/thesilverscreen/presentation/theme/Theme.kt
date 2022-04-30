@@ -28,7 +28,8 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun TheSilverScreenTheme(
+@Suppress("FunctionNaming")
+fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable() () -> Unit
 ) {

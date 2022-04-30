@@ -22,6 +22,7 @@ import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.BottomAppB
 import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.BottomAppBarScreen.Upcoming
 
 @Composable
+@Suppress("FunctionNaming")
 fun BottomAppBar(navHostController: NavHostController) {
     // list of screen that will show on the bottom app bar
     val screens = listOf(
@@ -49,6 +50,7 @@ fun BottomAppBar(navHostController: NavHostController) {
 
 // extension function to add bottom appbar item
 @Composable
+@Suppress("FunctionNaming")
 fun RowScope.AddBottomAppBarItem(
     screen: BottomAppBarScreen,
     currentDestination: NavDestination?,

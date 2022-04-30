@@ -1,3 +1,4 @@
+@file:Suppress("ComplexMethod")
 package com.htueko.thesilverscreen.data.remote.mapper
 
 import com.htueko.thesilverscreen.data.remote.dto.MovieDetailDto

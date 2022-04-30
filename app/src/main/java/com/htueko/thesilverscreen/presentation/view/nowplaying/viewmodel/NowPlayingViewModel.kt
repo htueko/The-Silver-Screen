@@ -1,3 +1,4 @@
+@file:Suppress("UnusedPrivateMember")
 package com.htueko.thesilverscreen.presentation.view.nowplaying.viewmodel
 
 import androidx.compose.runtime.State
@@ -9,7 +10,6 @@ import com.htueko.thesilverscreen.domain.model.status.ResultOf
 import com.htueko.thesilverscreen.domain.usecase.MovieUseCases
 import com.htueko.thesilverscreen.presentation.view.nowplaying.state.NowPlayingMoviesUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,7 +30,6 @@ class NowPlayingViewModel @Inject constructor(
 
     private fun getNowPlayingMovies(page: Int) {
         viewModelScope.launch {
-            delay(2_000)
             toggleLoading(true)
             when (val response = movieUseCases.getNowPlayingMovies(page)) {
                 is ResultOf.ApiError -> {
