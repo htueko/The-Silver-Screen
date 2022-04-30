@@ -1,8 +1,11 @@
 name: Generate release app
 
 on:
-  push:
-    branches: [ master ]
+  workflow_run:
+    workflows: ["build-and-test"]
+    branches: [ master, dev ]
+    types:
+      - completed
 
 jobs:
   generate-release-apk:
