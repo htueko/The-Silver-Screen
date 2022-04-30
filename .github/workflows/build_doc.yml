@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-documentation:
-    needs: [ linting, unit-testing, integration-testing ]
+    needs: [ build-and-test ]
     runs-on: ubuntu-latest
     continue-on-error: true
 
