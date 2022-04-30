@@ -44,3 +44,16 @@ buildscript {
         classpath "org.jetbrains.dokka:dokka-gradle-plugin:$dokka"
     }
 }
+
+apply from: "buildscripts/versions.gradle"
+
+subprojects {
+    apply from: "../buildscripts/ktlint.gradle"
+    apply from: "../buildscripts/detekt.gradle"
+    apply from: "../buildscripts/versionsplugin.gradle"
+    apply from: "../buildscripts/kover.gradle"
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
