@@ -1,4 +1,4 @@
-package com.htueko.thesilverscreen
+package com.htueko.thesilverscreen.data.util
 
 import androidx.test.platform.app.InstrumentationRegistry
 import timber.log.Timber

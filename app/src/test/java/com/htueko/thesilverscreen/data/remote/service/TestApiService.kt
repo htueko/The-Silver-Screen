@@ -2,8 +2,6 @@ package com.htueko.thesilverscreen.data.remote.service
 
 import android.os.Build
 import com.google.common.truth.Truth
-import com.htueko.thesilverscreen.data.remote.ApiClient
-import com.htueko.thesilverscreen.data.remote.ApiClientEngine
 import com.htueko.thesilverscreen.data.remote.HttpStatusCodeCollection
 import com.htueko.thesilverscreen.data.remote.dto.MovieDetailResponse
 import com.htueko.thesilverscreen.data.remote.dto.NowPlayingResponse

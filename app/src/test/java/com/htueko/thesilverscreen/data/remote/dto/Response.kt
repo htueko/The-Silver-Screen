@@ -1,6 +1,6 @@
 package com.htueko.thesilverscreen.data.remote.dto
 
-import com.htueko.thesilverscreen.JsonReader
+import com.htueko.thesilverscreen.data.util.JsonReader
 
 object NowPlayingResponse {
     fun getSuccessResponse(): String {
