@@ -6,6 +6,7 @@ import com.htueko.thesilverscreen.data.util.StatusCode
 import com.htueko.thesilverscreen.data.util.TestApiDispatcher
 import com.htueko.thesilverscreen.data.util.TestApiEndPoint
 import com.htueko.thesilverscreen.data.util.enqueueResponse
+import com.orhanobut.logger.Logger
 import com.squareup.moshi.Moshi
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
@@ -75,7 +76,7 @@ class TestApiService {
             // to test the first movie title
             assertThat(response.body()?.movies?.get(0)?.title).isEqualTo("Shang-Chi and the Legend of the Ten Rings")
         } catch (e: Exception) {
-            throw e
+            e.localizedMessage?.let { Logger.e(it) }
         }
     }
 
