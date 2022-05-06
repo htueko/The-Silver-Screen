@@ -5,7 +5,7 @@ import com.htueko.thesilverscreen.domain.util.AppLogger
 import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
-class App : Application() {
+class TheSilverScreenApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
