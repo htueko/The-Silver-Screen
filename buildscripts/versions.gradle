@@ -6,7 +6,7 @@ ext {
             // https://developer.android.com/jetpack/androidx/releases/core
             ktxCore              : "1.7.0",
             // https://kotlinlang.org/docs/releases.html#release-details
-            kotlin               : "1.6.21",
+            kotlin               : "1.6.10",
 
             // https://developer.android.com/jetpack/androidx/releases/appcompat
             appCompat            : "1.4.1",

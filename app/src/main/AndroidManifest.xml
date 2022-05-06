@@ -16,7 +16,6 @@
         <activity
             android:name=".presentation.view.MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.TheSilverScreen.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

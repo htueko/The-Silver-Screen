@@ -17,11 +17,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.annotation.ExperimentalCoilApi
-import coil.compose.ImagePainter
-import coil.compose.rememberImagePainter
+import coil.compose.AsyncImagePainter
+import coil.compose.rememberAsyncImagePainter
+import coil.request.ImageRequest
 import com.htueko.thesilverscreen.domain.model.Movie
 import com.htueko.thesilverscreen.presentation.view.home.bottomappbar.Screen
 
@@ -47,11 +49,14 @@ fun MovieCardComponent(data: Movie, navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Box(modifier = Modifier.height(200.dp)) {
-                val painter = rememberImagePainter(
-                    data = Movie().getBackDropImageUrl(data.backdropPath),
+                val painter = rememberAsyncImagePainter(
+                    model = ImageRequest.Builder(LocalContext.current)
+                        .data(Movie().getBackDropImageUrl(data.backdropPath))
+                        .build()
                 )
+
                 val painterState = painter.state
-                if (painterState is ImagePainter.State.Loading) {
+                if (painterState is AsyncImagePainter.State.Loading) {
                     Column(
                         modifier = Modifier.fillMaxSize(),
                         verticalArrangement = Arrangement.Center,

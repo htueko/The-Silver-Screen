@@ -7,7 +7,7 @@ buildscript {
         // https://gradle.org/releases/
         agp = "7.1.3"
         // https://kotlinlang.org/docs/releases.html#release-details
-        kotlin = "1.6.21"
+        kotlin = "1.6.10"
         // https://github.com/google/dagger/releases
         hilt                 = "2.41"
         // https://github.com/JLLeitschuh/ktlint-gradle/releases
